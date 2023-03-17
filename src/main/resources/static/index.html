@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Merge Texts</title>
+    <script>
+        /*function addText() {
+
+            fetch('/')
+                .then(response => {
+                    // İstek başarılı olduğunda yapılacak işlemler
+                    //alert("addText fonksiyonunu calistir!");
+                })
+                .catch(error => {
+                    // İstek başarısız olduğunda yapılacak işlemler
+                });
+
+        }*/
+
+        function mergeTexts() {
+           //alert("mergeTexts fonksiyonunu calistir!");
+
+            /*var mergedtext = "Merhaba Dünya!"; // TextBox'a atanacak metin
+            document.getElementById("merged-text").value = mergedtext; // TextBox'ın value özelliğine metin atanır*/
+
+        }
+
+        function saveText() {
+            //alert("saveText fonksiyonunu calistir!");
+
+        }
+    
+    </script>
+</head>
+<body>
+<h1>Merge Texts!</h1>
+<div>
+    <label for="text-1">Enter Text:</label>
+    <input type="text" id="text-1" name="text-1"><br><br>
+
+    <label for="text-2">Enter Text:</label>
+    <input type="text" id="text-2" name="text-2"><br><br>
+
+    <label for="text-optional">Optional Text:</label>
+    <input type="text" id="text-optional"><br><br>
+
+
+    <!--    <button onclick="addText()">Add Text</button><br><br> -->
+    <form action="/" method="post">
+        <button type="submit">Add Optional Text</button><br><br>
+    </form>
+
+    <button onclick="mergeTexts()">Merge Texts</button><br><br>
+
+
+    <label for="merged-text">Merged Text:</label>
+    <input type="text" id="merged-text" name="merged-text" readonly><br><br>
+
+    <button onclick="saveText()">Save Text</button><br><br>
+
+    <label for="time-text">Time:</label>
+    <label for="time">5</label>
+
+
+</div>
+</body>
+</html>
