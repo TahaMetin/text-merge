@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Merge Texts</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.get("/api/mydata", function(data) {
+                $("#my-element").html(data);
+            });
+        });
+    </script>
+
+
+    
     <script>
         /*function addText() {
 
@@ -60,6 +72,19 @@
 
     <label for="time-text">Time:</label>
     <label for="time">5</label>
+
+
+
+    <form action="/" method="post">
+        <label for="input1">Input 1:</label>
+        <input type="text" id="input1" name="input1">
+        <br>
+        <label for="input2">Input 2:</label>
+        <input type="text" id="input2" name="input2">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
 
 
 </div>
