@@ -4,17 +4,9 @@
     <meta charset="UTF-8">
     <title>Merge Texts</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $.get("/api/mydata", function(data) {
-                $("#my-element").html(data);
-            });
-        });
-    </script>
 
 
-    
+
     <script>
         /*function addText() {
 
@@ -47,14 +39,51 @@
 <body>
 <h1>Merge Texts!</h1>
 <div>
+
+    <style>
+
+        body {
+            background-image: url("doc.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        textarea {
+            resize: none;
+            overflow-wrap: break-word;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            height: 150px;
+        }
+
+        /* Label boyutunu ayarlamak için */
+        label {
+            font-size: 16px;
+        }
+
+        /* Label pozisyonunu ayarlamak için */
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+    </style>
+
     <label for="text-1">Enter Text:</label>
-    <input type="text" id="text-1" name="text-1"><br><br>
+    <textarea rows="3" cols="50" id = text-1></textarea><br><br>
+
+
+    <!--  <label for="text-1">Enter Text:</label>
+    <input type="text" id="text-1" name="text-1"><br><br>       -->
 
     <label for="text-2">Enter Text:</label>
-    <input type="text" id="text-2" name="text-2"><br><br>
+    <textarea rows="3" cols="50" id = text-2></textarea><br><br>
 
     <label for="text-optional">Optional Text:</label>
-    <input type="text" id="text-optional"><br><br>
+    <textarea rows="3" cols="50" id = text-optional></textarea><br><br>
 
 
     <!--    <button onclick="addText()">Add Text</button><br><br> -->
@@ -66,24 +95,15 @@
 
 
     <label for="merged-text">Merged Text:</label>
-    <input type="text" id="merged-text" name="merged-text" readonly><br><br>
+    <!--   <input type="text" id="merged-text" name="merged-text" readonly><br><br> -->
+    <textarea rows="3" cols="50" id = merged-text></textarea><br><br>
 
     <button onclick="saveText()">Save Text</button><br><br>
 
-    <label for="time-text">Time:</label>
-    <label for="time">5</label>
+    <label for="time">Time:</label>
+    <textarea rows="1" cols="50" id = time-elapsed></textarea>
 
 
-
-    <form action="/" method="post">
-        <label for="input1">Input 1:</label>
-        <input type="text" id="input1" name="input1">
-        <br>
-        <label for="input2">Input 2:</label>
-        <input type="text" id="input2" name="input2">
-        <br>
-        <button type="submit">Submit</button>
-    </form>
 
 
 
