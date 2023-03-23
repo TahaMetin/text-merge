@@ -22,3 +22,12 @@ Text Merger requires a web server with PHP support and a NoSQL database (MongoDB
 *Installation*
 <br />
 To install Text Merger, simply download the source code and upload it to your web server. Update the database credentials in the "config.php" file to match your database settings.
+
+
+
+
+
+
+
+
+asdddd
