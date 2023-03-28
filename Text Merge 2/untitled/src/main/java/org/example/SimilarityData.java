@@ -1,5 +1,7 @@
 package org.example;
 
+import javax.swing.plaf.basic.BasicComboBoxUI;
+
 public class SimilarityData {
     private int textNo1;
     private int textNo2;
@@ -11,6 +13,9 @@ public class SimilarityData {
         this.similarityScore = similarityScore;
     }
     public SimilarityData() {
+        this.textNo1 = 0;
+        this.textNo2  =0;
+        this.similarityScore = 0.0;
     }
     public int getTextNo1() {
         return textNo1;
