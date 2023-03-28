@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Merge Texts</title>
+
+    <script>
+
+        /*function addText() {
+
+            fetch('/')
+                .then(response => {
+                    // İstek başarılı olduğunda yapılacak işlemler
+                    //alert("addText fonksiyonunu calistir!");
+                })
+                .catch(error => {
+                    // İstek başarısız olduğunda yapılacak işlemler
+                });
+
+        }*/
+
+        function mergeTexts() {
+            //alert("mergeTexts fonksiyonunu calistir!");
+
+            /*var mergedtext = "Merhaba Dünya!"; // TextBox'a atanacak metin
+            document.getElementById("merged-text").value = mergedtext; // TextBox'ın value özelliğine metin atanır*/
+
+        }
+
+
+
+
+
+    </script>
+
+
+
+</head>
+<body>
+<h1>Merge Texts!</h1>
+
+<div>
+
+
+    <style>
+
+        body {
+            background-image: url("bg.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        textarea {
+            resize: none;
+            overflow-wrap: break-word;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            height: 45px;
+        }
+
+        /* Label boyutunu ayarlamak için */
+        label {
+            font-size: 16px;
+        }
+
+        /* Label pozisyonunu ayarlamak için */
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+    </style>
+
+
+    <form action="http://localhost:8080/add-text" method="POST">
+
+        <label for="text-1">Enter Text:</label>
+        <!--<textarea rows="3" cols="50" id = text-1></textarea><br><br>-->
+        <input type="text" name="text-1"><br>
+
+
+        <label for="text-2">Enter Text:</label>
+        <!--<textarea rows="3" cols="50" id = text-2></textarea><br><br>-->
+        <input type="text" name="text-2"><br>
+
+        <label for="text-optional">Optional Text:</label>
+        <!--<textarea rows="3" cols="50" id = text-optional></textarea><br><br>-->
+        <input type="text" name="text-optional"><br><br>
+
+        <button type="submit">Add Text</button><br>
+
+
+    </form>
+
+    <form action="http://localhost:8080/merge-text" method="POST">
+
+        <button type="submit">Merge Texts</button><br>
+
+        <label for="result">Result:</label>
+        <input type="text" id="result" name="result" readonly>
+    </form>
+
+
+    <br><br>
+
+
+
+
+
+
+    <form action="http://localhost:8080/save-text" method="POST">
+        <button type="submit">Save Texts</button><br>
+
+        <label for="merged-text">Result:</label>
+        <input type="text" id="merged-text" name="merged-text" readonly>
+
+    </form>
+
+    <label for="time">Time:</label>
+    <textarea rows="1" cols="50" id = time-elapsed></textarea>
+
+
+
+    <script>
+            const form = document.querySelector('form[action="http://localhost:8080/add-text"]');
+            const resultInput = document.querySelector('#result');
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const formData = new FormData(event.target);
+
+                fetch('/add-text', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.text())
+                    .then(text => resultInput.value = text);
+            });
+
+            const form2 = document.querySelector('form[action="http://localhost:8080/merge-text"]');
+            const resultInput2 = document.querySelector('#merged-text');
+            const timeElapsed = document.querySelector('#time-elapsed');
+
+            form2.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const formData = new FormData(event.target);
+
+                const startTime = performance.now();
+
+                fetch('/merge-text', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.text())
+                    .then(text => {
+                        const endTime = performance.now();
+                        const elapsedTime = endTime - startTime;
+                        timeElapsed.value = elapsedTime.toFixed(2) + " ms";
+                        resultInput2.value = text;
+                    });
+            });
+
+            const form3 = document.querySelector('form[action="http://localhost:8080/save-text"]');
+            const resultInput3 = document.querySelector('#merged-text');
+
+            form3.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const formData = new FormData(event.target);
+
+                fetch('/save-text', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.text())
+                    .then(text => resultInput3.value = text);
+            });
+
+
+
+        </script>
+
+
+
+    <br><br>
+
+    <!--<form action="http://localhost:8080/save-text" method="POST">
+
+
+        <button type="submit">Save Text</button><br>
+
+    </form>-->
+
+
+
+
+
+
+</div>
+
+</body>
+</html>
