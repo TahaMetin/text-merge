@@ -3,10 +3,9 @@ package org.example;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-public class TextMerge {
+public class TextMergeManager {
     public static void main(String[] args) {
 
         //TODO start time
